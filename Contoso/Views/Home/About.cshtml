@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Contoso.Models.SchoolViewModels.EnrollmentDateGroup>
+
+@{
+    ViewData["Title"] = "学生注册人数统计";
+}
+
+    <h2>学生注册人数统计</h2>
+
+<table>
+    <tr>
+        <th>
+            注册日期
+        </th>
+        <th>
+            学生人数
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
